@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+from os.path import join, dirname
+import sys
+
+libdir = join(dirname(__file__), '..')
+
+if libdir not in sys.path:
+    sys.path.insert(0, libdir)
+
+# now we can import the project
+from sequencer.sequencers import build_chromosome
+
+fasta = open(sys.argv[1]) if sys.argv[1:] else sys.stdin
+
+print(build_chromosome(fasta))
