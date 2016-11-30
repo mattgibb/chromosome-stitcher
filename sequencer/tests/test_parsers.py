@@ -1,5 +1,4 @@
-import unittest
-import io
+import unittest, io
 from sequencer.parsers import Sequence, parse_fasta 
 
 class TestParsers(unittest.TestCase):
